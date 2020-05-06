@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title></title>
+    </head>
+
+    <body>
+        <h1>Welcome to the chat app </h1>
+        <div id="all-chat-mssgs"></div>
+        <form id='mssg-form'>
+        <input id="message" placeholder="Message here" autocomplete="off">
+        <button id='send-btn'>send</button>
+        </form>
+
+
+        <script id='mssg-box' type="text/html">
+        <div>
+            <p>{{message}}{{time}}</p>
+        </div>
+        
+        </script>
+        
+        <script src="/socket.io/socket.io.js"></script>
+        <script src="effects/chatroom.js"></script>
+        <script src="cdnjs/mustache.min.js"></script>
+        <script src="cdnjs/time.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/qs/6.9.4/qs.min.js"></script>
+
+    </body>
+</html>
