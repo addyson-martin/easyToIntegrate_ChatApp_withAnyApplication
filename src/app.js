@@ -19,7 +19,7 @@ io.on('connection',(socket)=>
     socket.broadcast.emit('mssg',createMssg('A new user has joined the grp'))
     socket.on('user-messaged',(mssg,callback)=>
     {
-        io.emit('mssg',mssg)
+        io.emit('mssg',createMssg(mssg))
         callback()
     })
 

@@ -1,31 +1,22 @@
 <!DOCTYPE html>
-
 <html>
     <head>
-        <title></title>
+        <title>Chat App</title>
+        <link rel="icon" href="./assets/icon.png">
+        <link rel="stylesheet" href="./css/styles.css">
     </head>
-
     <body>
-        <h1>Welcome to the chat app </h1>
-        <div id="all-chat-mssgs"></div>
-        <form id='mssg-form'>
-        <input id="message" placeholder="Message here" autocomplete="off">
-        <button id='send-btn'>send</button>
-        </form>
-
-
-        <script id='mssg-box' type="text/html">
-        <div>
-            <p>{{message}}{{time}}</p>
+        <div class="centered-form">
+            <div class="centered-form__box">
+                <h1>Join</h1>
+                <form action="/chatroom.html">
+                    <label>Display name</label>
+                    <input type="text" name="username" placeholder="Display name" required>
+                    <label>Room</label>
+                    <input type="text" name="room" placeholder="Room" required>
+                    <button id="join-btn">Join</button>
+                </form>
+            </div>
         </div>
-        
-        </script>
-        
-        <script src="/socket.io/socket.io.js"></script>
-        <script src="effects/chatroom.js"></script>
-        <script src="cdnjs/mustache.min.js"></script>
-        <script src="cdnjs/time.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/qs/6.9.4/qs.min.js"></script>
-
     </body>
 </html>
