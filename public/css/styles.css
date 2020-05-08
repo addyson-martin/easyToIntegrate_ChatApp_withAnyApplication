@@ -46,7 +46,7 @@ button {
     transition: background .3s ease;
     border-radius: 100%;
     align-items: center;
-    background:url("../assets/btn.jpeg") ;
+    background-color: #eeeeee;
 }
 
 button:hover {
@@ -61,7 +61,7 @@ button:disabled {
 /* Join Page Styles */
 
 .centered-form {
-    background: #333744;
+    background: #242582;
     width: 100vw;
     height: 100vh;   
     display: flex;
@@ -71,13 +71,16 @@ button:disabled {
 
 .centered-form__box {
     box-shadow: 0px 0px 17px 1px #1D1F26;
-    background: #F7F7FA;
+    background: #F64C72;
     padding: 24px;
     width: 250px;
 }
 
 .centered-form button {
     width: 100%;
+    border-style: none;
+    background-color: #2F2FA2;
+    border-radius: 0;
 }
 
 .centered-form input {
@@ -93,18 +96,48 @@ button:disabled {
 }
 
 .sidebar {
+    
     height: 100vh;
     color: white;
-    background: #2F2FA2;
-    width: 15%;
+    background: #30011e;
+    display: flex;
+    width: 13%;
+    /* flex-grow: 1; */
+    flex-direction: column;
     overflow-y: auto;
-    border: 2px solid #242582
+    /* border: 2px solid #242582 */
 }
-
+.sidebar-ul
+{
+    width: 100%;
+    margin-top:5px;
+    /* flex-grow: 1; */
+    height: 7%;
+    align-items: center;
+}
+#room_name
+{
+    background-color:white;
+    color: black;
+    animation: room 1s;
+}
+.sidebar-data
+{
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    padding: 5%;
+    color: black;
+    background-color:#f57931;
+}
+.animate_room
+{
+    animation: room 2s;
+}
 /* Chat styles */
 
 .chat-window {
-    flex-grow: 1;
+    flex-grow: 6;
     display: flex;
     flex-direction: column;
     max-height: 100vh;
@@ -136,7 +169,7 @@ button:disabled {
 .message_data
 {
     font-size: medium;
-    background-color: #F64C72;
+    background-color: #0dd1c7;
     width: 40%;
     padding: 0.8%;
     border-radius: 20px;
@@ -145,7 +178,7 @@ button:disabled {
     
 }
 
-/* Message Composition Styles */
+/* Message form Styles */
 
 .compose {
     display: flex;
@@ -165,6 +198,8 @@ button:disabled {
     border: 1px solid #eeeeee;
     width: 100%;
     padding: 12px;
+    background-color: #eeeeee;
+    color: black;
     margin: 0 16px 0 0;
     flex-grow: 1;
 }
@@ -173,29 +208,15 @@ button:disabled {
     font-size: 14px;
 }
 
-/* Chat Sidebar Styles */
 
-.room-title {
-    font-weight: 400;
-    font-size: 22px;
-    background: #2c2f3a;
-    padding: 24px;   
-}
-
-.list-title {
-    font-weight: 500;
-    font-size: 18px;
-    margin-bottom: 4px;
-    padding: 12px 24px 0 24px;
-}
-
-.users {
-    list-style-type: none;
-    font-weight: 300;
-    padding: 12px 24px 0 24px;
-}
 @keyframes message
 {
-    0%{background-color: #2137db;}
-    100% {background-color: #F64C72;}
+    0%{background-color: #b309aa;}
+    100% {background-color: #0dd1c7;}
+}
+
+@keyframes room
+{
+    0%{background-color: #f57931;}
+    100% {background-color: #eeeeee}
 }

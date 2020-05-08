@@ -1,8 +1,9 @@
-const createMssg=(data)=>
+const createMssg=(data,username)=>
 {
 return{
     mssgContent:data,
-    deliveredAt: new Date().getTime()
+    deliveredAt: new Date().getTime(),
+    username:username
 }
 }
 

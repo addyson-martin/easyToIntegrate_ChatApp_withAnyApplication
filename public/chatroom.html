@@ -12,20 +12,17 @@
 
         <div class="main-chat-body">
             <!-- main chat body -->
-            <div class="sidebar"></div>
+            <div class="sidebar" id="sidebar-user"></div>
 
             <div class="chat-window">
                 <!-- chat box starts -->
                 <div id="all-chat-mssgs" class="chat_messages"></div>
                 <div class="compose">
                     <form id='mssg-form'>
-                        <input id="message" placeholder="Message here" autocomplete="off">
+                        <input id="message" placeholder="Message here" required autocomplete="off">
                         <button id='send-btn'><img height="30px" width="30px" style="border-radius:50%;"  src="./assets/btn.jpeg"></button>
                     </form>
                 </div>
-                
-
-
             </div>
         </div>
 
@@ -33,19 +30,32 @@
         <script id='mssg-box' type="text/html">
             <div class="message">
                 <p>
-                    <span class="message_name">Username</span>
+                    <span class="message_name">{{username}}</span>
                     <span class="message_time">{{time}}</span>
                     
                 </p>
                 <p class="message_data">{{message}}</p>
             </div>
         </script>
+        <script id="sidebar-templates" type="text/html">
+        <div class="sidebar-ul">
+            <p class="sidebar-data">{{sidebarData}}</p>    
+        </div>
         
+        </script>
+        <script id="room-name-temp" type="text/html">
+            <div class="sidebar-ul">
+                <p class="sidebar-data" id="room_name">{{name}}</p>    
+            </div>
+            
+            </script>
+        <script src="effects/functions.js"></script>
         <script src="/socket.io/socket.io.js"></script>
-        <script src="effects/chatroom.js"></script>
         <script src="cdnjs/mustache.min.js"></script>
         <script src="cdnjs/time.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/qs/6.9.4/qs.min.js"></script>
+        <script src="effects/chatroom.js"></script>
+        
+        
 
     </body>
 </html>
