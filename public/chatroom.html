@@ -2,6 +2,7 @@
 
 <html>
     <head>
+	<meta charset="UTF-8">
         <title>ChatApp</title>
         <link rel="icon" href="assets/icon.png">
         <link rel="stylesheet" href="css/styles.css">
@@ -9,7 +10,6 @@
 
     <body>
         <!-- <h1>Welcome to the chat app </h1> -->
-
         <div class="main-chat-body">
             <!-- main chat body -->
             <div class="sidebar" id="sidebar-user"></div>
@@ -19,22 +19,24 @@
                 <div id="all-chat-mssgs" class="chat_messages"></div>
                 <div class="compose">
                     <form id='mssg-form'>
-                        <input id="message" placeholder="Message here" required autocomplete="off">
+                        <input id="message" type="text" placeholder="Message here" required autocomplete="off">
                         <button id='send-btn'><img height="30px" width="30px" style="border-radius:50%;"  src="./assets/btn.jpeg"></button>
                     </form>
+                    <button id="emojis">&#128512;</button>
+
                 </div>
             </div>
         </div>
 
         
         <script id='mssg-box' type="text/html">
-            <div class="message">
+            <div style="margin-left:{{margin}};" class="message">
                 <p>
                     <span class="message_name">{{username}}</span>
                     <span class="message_time">{{time}}</span>
                     
                 </p>
-                <p class="message_data">{{message}}</p>
+                <p id="mssg-data" class="message_data">{{message}}</p>
             </div>
         </script>
         <script id="sidebar-templates" type="text/html">
@@ -47,8 +49,12 @@
             <div class="sidebar-ul">
                 <p class="sidebar-data" id="room_name">{{name}}</p>    
             </div>
-            
-            </script>
+        </script>
+        <script id="emojis-template" type="text/html">
+        
+        </script>
+        <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> -->
+        <!-- <script src="cdnjs/emoji.js"></script> -->
         <script src="effects/functions.js"></script>
         <script src="/socket.io/socket.io.js"></script>
         <script src="cdnjs/mustache.min.js"></script>

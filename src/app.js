@@ -20,6 +20,8 @@ io.on('connection',(socket)=>
     {
         const room =obj.room
         const username=obj.username
+        console.log(socket.id);
+        socket.emit('sendclientid',socket.id)
         const {error,user}=appendUser({id:socket.id,username:username,room:room})
         if(error)
         {
@@ -51,7 +53,7 @@ io.on('connection',(socket)=>
     socket.on('user-messaged',(mssg,callback)=>
         {
             const res=getuser(socket.id)
-            io.to(res.room).emit('mssg',createMssg(mssg,res.username))
+            io.to(res.room).emit('mssg',createMssg(mssg,res.username),socket.id)
             callback()
         })
     
